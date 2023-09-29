@@ -1,12 +1,6 @@
-const markdownLinkAttributes = require("markdown-it-link-attributes")
+var markdownItAttrs = require('markdown-it-attrs')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownLinkAttributes, [{
-    pattern: /^https?:\/\//,
-    attrs: {
-      class: 'external-link',
-      target: '_blank',
-    }
-  }]))
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItAttrs))
 };
 
